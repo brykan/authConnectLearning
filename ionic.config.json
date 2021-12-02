@@ -1,5 +1,7 @@
 {
   "name": "jenkinsTest",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "react"
 }
