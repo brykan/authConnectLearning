@@ -1,12 +1,22 @@
 import './ExploreContainer.css';
+import { Capacitor } from '@capacitor/core'
 
 interface ContainerProps { }
 
 const ExploreContainer: React.FC<ContainerProps> = () => {
+  const ciTrigger = process.env.REACT_API_CI_TRIGGER || 'Ionic CLI';
+  const platform = Capacitor.getPlatform();
+
+  const binaryType = platform === 'ios' ? 'IPA' : platform === 'android' ? 'APK' : 'website'
   return (
     <div className="container">
-      <strong>Ready to create a second branch in a multibranch jenkins application?</strong>
-      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <strong>This {binaryType} was built by Appflow</strong>
+      {ciTrigger && (
+        <p>Triggered by +{ciTrigger}
+          <br/>
+
+        </p>
+      )}
     </div>
   );
 };

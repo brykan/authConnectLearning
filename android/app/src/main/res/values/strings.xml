@@ -4,7 +4,7 @@
   <string name="title_activity_main">jenkinsTest</string>
   <string name="package_name">io.ionic.starter</string>
   <string name="custom_url_scheme">io.ionic.starter</string>
-  <string name="ionic_app_id">33892df1</string>
+  <string name="ionic_app_id">ac946e0d</string>
   <string name="ionic_channel_name">Production</string>
   <string name="ionic_update_method">background</string>
   <string name="ionic_max_versions">2</string>
