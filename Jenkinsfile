@@ -20,15 +20,14 @@ pipeline {
     stage('Build') {
       parallel {
         stage('Build Android') {
-          // agent {
-          //   docker {
-          //     image  'ghcr.io/ionic-team/ionic-cli:6.11.11'
-          //     args '-v $PWD:/usr/src/app/ -u 0:0'
-          //   }
-          // }
+          agent {
+            docker {
+              image  'ghcr.io/ionic-team/ionic-cli:6.18.1'
+              args '-v $PWD:/usr/src/app/ -u 0:0'
+            }
+          }
           steps {
-            echo 'building ...'
-              // sh 'ionic package build android debug --environment="Jenkins" --native-config"=Jenkins" --build-file-name="Jenkins-$BUILD_ID.apk"'
+            sh 'ionic package build android debug --environment="Jenkins" --native-config"=Jenkins" --build-file-name="Jenkins-$BUILD_ID.apk"'
           }
           // post {
           //   success {
