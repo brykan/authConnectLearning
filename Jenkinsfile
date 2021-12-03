@@ -4,10 +4,6 @@ pipeline {
       IONIC_TOKEN = credentials('ionic-token')
   }
   stages {
-      stage('Initialize'){
-        def docker = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
     // stage('NPM Tests') {
     //   agent {
     //     docker {
